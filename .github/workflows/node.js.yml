@@ -17,5 +17,5 @@ jobs:
         files: "yarn.lock"
     - name: yarn.lock exists.
       if: steps.yarn_lock_file_check.outputs.files_exists == 'true'
-      run: core.setFailed(1)
+      run: exit 1
       
