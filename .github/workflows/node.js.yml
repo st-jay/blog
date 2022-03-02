@@ -1,0 +1,24 @@
+name: File existence checks
+
+on:
+  pull_request:
+    branches: [ master ]
+
+jobs:
+  yarn_lock_check:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node-version: [12.x, 14.x, 16.x]
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v2
+    - name: Check if yarn.lock exists
+      id: yarn_lock_file_check
+      uses: ndstor/file-existence-action@v1
+      with:
+        files: "yarn.lock"
+    - name: yarn.lock exists.
+      if: steps.yarn_lock_file_check.outputs.files_exists = "true"
+      run: core.setFailed("yarn.lock exists")
+      
