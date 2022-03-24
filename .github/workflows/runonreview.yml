@@ -2,11 +2,13 @@ name: Run SEO Tests
 
 on:
   pull_request:
-    types: requested
+    branches: [ master ]
+    types: [ requested ]
 
 jobs:
   run_seo_tests:
+    name: Mega test suite
     runs-on: ubuntu-latest
     steps:
     - name: Hello
-      run: echo "Hello there!"
+      run: echo Hello there!
