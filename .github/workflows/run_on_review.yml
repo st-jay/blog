@@ -2,7 +2,7 @@ name: Run SEO Tests
 
 on:
   pull_request:
-    types: [requested]
+    types: [opened, edited, requested]
 
 jobs:
   run_seo_tests:
