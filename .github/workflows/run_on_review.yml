@@ -2,11 +2,10 @@ name: Run SEO Tests
 
 on:
   pull_request:
-    types: [opened, edited, requested]
+    types: [requested]
 
 jobs:
   run_seo_tests:
-    if: github.event.review.state == 'pending'
     runs-on: ubuntu-latest
     steps:
     - name: Hello
