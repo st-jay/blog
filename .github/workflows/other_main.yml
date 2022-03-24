@@ -1,0 +1,19 @@
+name: Run SEO Tests
+
+on:
+  pull_request:
+    branches: [ master ]
+    types:
+      - created
+      - reopened
+      - review_requested
+
+jobs:
+  run_seo_tests:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    - name: Hello
+      run: ls
+    - name: Step two
+      run: echo 'Hello there'
