@@ -7,8 +7,10 @@ on:
 
 jobs:
   run_seo_tests:
-    name: Mega test suite
     runs-on: ubuntu-latest
     steps:
+    - uses: actions/checkout@v2
     - name: Hello
-      run: echo Hello there!
+      run: ls
+    - name: Step two
+      run: echo 'Hello there'
