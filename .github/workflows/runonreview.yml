@@ -1,0 +1,12 @@
+name: Run SEO Tests
+
+on:
+  pull_request:
+    types: requested
+
+jobs:
+  run_seo_tests:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Hello
+      run: echo "Hello there!"
